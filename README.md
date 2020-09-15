@@ -2,7 +2,7 @@
 
 Trying to create an UI that will display the transformer failure rate. 
 
-MainWindow.py - codes that links the button / files together
+(RUN THIS) MainWindow.py - codes that links the button / files together
 
 UiMainWindow.py - Create from Qt Designner
 
