@@ -8,8 +8,10 @@ UiMainWindow.py - Create from Qt Designner
 
 Photo.py - Insert photos into UiMainwindow (Qt designer)
 
-DataFile_db.py - Convert CSV to .db 
+calendar.py - Modify the build in function / color of calendar
 
-DatabaseImport.py - store data from csv to .db table and display it on tableview widget
+Ignore//DataFile_db.py - Convert CSV to .db 
+
+Ignore//DatabaseImport.py - store data from csv to .db table and display it on tableview widget
 
 
