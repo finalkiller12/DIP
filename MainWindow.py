@@ -147,30 +147,26 @@ class MainWindow():
                 self.ui.checkBox_2.setChecked(False)
 
     def Display_1(self):
-        data = pd.read_csv('mvlv-transformer.csv',
-                           usecols=['active_power', 'current', 'voltage', 'active_power', 'reactive_power',
-                                    'apparent_power'])
+        data1 = pd.read_csv('CurrentVoltage.csv',
+                            usecols=['VL1', 'IL1', 'DeviceTimeStamp'])
+        data2 = pd.read_csv('TotalPower.csv',
+                            usecols=['DeviceTimeStamp', 'KW'])
+
         f, axes = plt.subplots(1, 1, figsize=(8, 4))
 
         if self.ui.checkBox_1.isChecked():
-            axes.set_xlabel("Sample Size")
             axes.set_ylabel("Voltage (V)")
-
-            data.head(10000).plot(y=['voltage'], ax=axes)
+            data1.head(10000).plot(x='DeviceTimeStamp', y='VL1', ax=axes)
             plt.show()
 
         elif self.ui.checkBox_2.isChecked():
-            axes.set_xlabel("Sample Size")
             axes.set_ylabel("Current (A)")
-
-            data.head(10000).plot(y=['current'], ax=axes)
+            data1.head(10000).plot(x='DeviceTimeStamp', y='IL1', ax=axes)
             plt.show()
 
         elif self.ui.checkBox_3.isChecked():
-            axes.set_xlabel("Sample Size")
             axes.set_ylabel("Power (W)")
-
-            data.head(10000).plot(y=['active_power'], ax=axes)
+            data2.head(10000).plot(x='DeviceTimeStamp', y='KW', ax=axes)
             plt.show()
 
     def getCSV(self):
